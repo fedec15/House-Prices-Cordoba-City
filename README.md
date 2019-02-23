@@ -12,7 +12,7 @@ Modelo predictivo de valores de inmuebles de la Ciudad de Córdoba, desarrollado
 
 * http://maerion.pythonanywhere.com/ 
 
-El modelo descansa sobre un dataset de más de 30.000 inmubeles de la Ciudad de Córdoba, el cual fue obtenido por medio de webscrapping de las siguientes plataformas de compra-venta de inmubeles:
+El modelo descansa sobre un dataset de más de 30.000 inmuebles de la Ciudad de Córdoba, el cual fue obtenido por medio de webscrapping de las siguientes plataformas de compra-venta de inmubeles:
 
 * https://clasificados.lavoz.com.ar
 * https://www.zonaprop.com.ar
