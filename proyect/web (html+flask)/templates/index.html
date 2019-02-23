@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Calculador de propiedades</title>
+  <style>
+    table, tr, th, td {
+      border: 1px solid black;
+      <!--border-collapse: collapse; -->
+      padding: 5px;
+      text-align: center;
+      border-spacing: 1px;
+      background-color: #f6f1e6;}
+    table{
+      margin-right: 1%;
+      float:left;}
+    .copyleft {
+      display:inline-block;
+      transform: rotate(180deg);}
+  </style>
+</head>
+<body style="background-color:#e0f2f0;">
+  <h1 style="font-family:verdana;">Calculador del valor de propiedades de la Ciudad de Córdoba</h2>
+  <p style="font-family:verdana;">Ingrese los siguientes parámetros para estimar el valor de la propiedad: </p>
+  <form action="" method="POST">
+    <table style="font-family:verdana;font-size:80%;">
+      <tr>
+        <th>Propiedad</th>
+        <th>Zona</th>
+        <th>Barrio</th>
+        <th>Tipo de Barrio</th>
+        <th>Dormitorios</th>
+        <th>Baños</th>
+        <th>Cocheras</th>
+        <th>Mts2 Cubiertos</th>
+        <th>Mts2 Totales</th>
+      </tr>
+      <tr>
+        <td>
+          <select name="propiedad">
+            <option value="Casa">Casa</option>
+            <option value="Duplex">Duplex</option>
+            <option value="Departamento">Departamento</option>
+          </select>
+        </td>
+        <td>
+          <select name="zona">
+            <option value="Central">Central</option>
+            <option value="Este">Este</option>
+            <option value="Oeste">Oeste</option>
+            <option value="Norte">Norte</option>
+            <option value="Sur">Sur</option>
+            <option value="Nordeste">Nordeste</option>
+            <option value="Noroeste">Noroeste</option>
+            <option value="Sudeste">Sudeste</option>
+            <option value="Sudoeste">Sudoeste</option>
+            <option value="Cerro-Argüello">Cerro-Argüello</option>
+            <option value="Guiñazú">Guiñazú</option>
+          </select>
+        </td>
+        <td>
+          <select name="barrio">
+            <option value="1 de Mayo">1 de Mayo</option>
+            <option value="20 de Junio">20 de Junio</option>
+            <option value="23 de Abril">23 de Abril</option>
+            <option value="4 de Febrero">4 de Febrero</option>
+            <option value="ATE">ATE</option>
+            <option value="Achával Peña">Achával Peña</option>
+            <option value="Acosta">Acosta</option>
+            <option value="Acquavista">Acquavista</option>
+            <option value="Aeronáutico">Aeronáutico</option>
+            <option value="Alameda">Alameda</option>
+            <option value="Alberdi">Alberdi</option>
+            <option value="Alberto">Alberto</option>
+            <option value="Alborada Norte">Alborada Norte</option>
+            <option value="Alborada Sud">Alborada Sud</option>
+            <option value="Alborada Sur">Alborada Sur</option>
+            <option value="Alejandro Centeno">Alejandro Centeno</option>
+            <option value="Almirante Brown">Almirante Brown</option>
+            <option value="Alta Córdoba">Alta Córdoba</option>
+            <option value="Altamira">Altamira</option>
+            <option value="Alto Alberdi">Alto Alberdi</option>
+            <option value="Alto Hermoso">Alto Hermoso</option>
+            <option value="Alto Palermo">Alto Palermo</option>
+            <option value="Alto Verde">Alto Verde</option>
+            <option value="Alto Villasol">Alto Villasol</option>
+            <option value="Altos Sud de San Vicente">Altos Sud de San Vicente</option>
+            <option value="Altos de La Calera">Altos de La Calera</option>
+            <option value="Altos de Manantiales">Altos de Manantiales</option>
+            <option value="Altos de San Martín">Altos de San Martín</option>
+            <option value="Altos de Villa Cabrera">Altos de Villa Cabrera</option>
+            <option value="Altos de Vélez Sársfield">Altos de Vélez Sársfield</option>
+            <option value="Altos del Chateau">Altos del Chateau</option>
+            <option value="Ameghino Norte">Ameghino Norte</option>
+            <option value="Ameghino Sud">Ameghino Sud</option>
+            <option value="Amp. Res. America">Amp. Res. America</option>
+            <option value="Ampliación 1 de Mayo">Ampliación 1 de Mayo</option>
+            <option value="Ampliación Altamira">Ampliación Altamira</option>
+            <option value="Ampliación Benjamín Matienzo">Ampliación Benjamín Matienzo</option>
+            <option value="Ampliación Cabo Farina">Ampliación Cabo Farina</option>
+            <option value="Ampliación Cerveceros">Ampliación Cerveceros</option>
+            <option value="Ampliación Empalme">Ampliación Empalme</option>
+            <option value="Ampliación Jardín Espinosa">Ampliación Jardín Espinosa</option>
+            <option value="Ampliación Kennedy">Ampliación Kennedy</option>
+            <option value="Ampliación Las Palmas">Ampliación Las Palmas</option>
+            <option value="Ampliación Los Plátanos">Ampliación Los Plátanos</option>
+            <option value="Ampliación Palmar">Ampliación Palmar</option>
+            <option value="Ampliación Panamericano">Ampliación Panamericano</option>
+            <option value="Ampliación Poeta Lugones">Ampliación Poeta Lugones</option>
+            <option value="Ampliación Pueyrredón">Ampliación Pueyrredón</option>
+            <option value="Ampliación Residencial América">Ampliación Residencial América</option>
+            <option value="Ampliación Rosedal">Ampliación Rosedal</option>
+            <option value="Ampliación San Fernando">Ampliación San Fernando</option>
+            <option value="Ampliación San Pablo">Ampliación San Pablo</option>
+            <option value="Ampliación Vélez Sársfield">Ampliación Vélez Sársfield</option>
+            <option value="Ampliación Yapeyú">Ampliación Yapeyú</option>
+            <option value="Ana Maria Zumarán">Ana Maria Zumarán</option>
+            <option value="Arcos I">Arcos I</option>
+            <option value="Argüello Lourdes">Argüello Lourdes</option>
+            <option value="Argüello Norte">Argüello Norte</option>
+            <option value="Argüello">Argüello</option>
+            <option value="Arturo Capdevila">Arturo Capdevila</option>
+            <option value="Autódromo">Autódromo</option>
+            <option value="Avenida">Avenida</option>
+            <option value="Ayacucho">Ayacucho</option>
+            <option value="Ayres del Sur">Ayres del Sur</option>
+            <option value="Bajada San Roque">Bajada San Roque</option>
+            <option value="Bajada de Piedra">Bajada de Piedra</option>
+            <option value="Bajo Galán">Bajo Galán</option>
+            <option value="Bajo General Paz">Bajo General Paz</option>
+            <option value="Barrancas Norte">Barrancas Norte</option>
+            <option value="Barranquitas">Barranquitas</option>
+            <option value="Bella Vista Oeste">Bella Vista Oeste</option>
+            <option value="Bella Vista">Bella Vista</option>
+            <option value="Betania">Betania</option>
+            <option value="Bialet Massé">Bialet Massé</option>
+            <option value="Boedo">Boedo</option>
+            <option value="Brigadier San Martín">Brigadier San Martín</option>
+            <option value="Cabaña del Pilar">Cabaña del Pilar</option>
+            <option value="Cabo Farina">Cabo Farina</option>
+            <option value="California">California</option>
+            <option value="Carbó">Carbó</option>
+            <option value="Carola Lorenzini">Carola Lorenzini</option>
+            <option value="Carolina">Carolina</option>
+            <option value="Carrara">Carrara</option>
+            <option value="Caseros">Caseros</option>
+            <option value="Casonas Del Sur">Casonas Del Sur</option>
+            <option value="Cañuelas">Cañuelas</option>
+            <option value="Centenario">Centenario</option>
+            <option value="Centro América">Centro América</option>
+            <option value="Centro">Centro</option>
+            <option value="Cerro Chico">Cerro Chico</option>
+            <option value="Cerro Norte">Cerro Norte</option>
+            <option value="Cerro de las Rosas">Cerro de las Rosas</option>
+            <option value="Cerveceros">Cerveceros</option>
+            <option value="Chacra Escondida">Chacra Escondida</option>
+            <option value="Chacra del Norte">Chacra del Norte</option>
+            <option value="Chacra del Sur">Chacra del Sur</option>
+            <option value="Chacras de la Villa">Chacras de la Villa</option>
+            <option value="Chateau Carreras">Chateau Carreras</option>
+            <option value="Cinco Lomas">Cinco Lomas</option>
+            <option value="Ciudadela">Ciudadela</option>
+            <option value="Claros del Bosque">Claros del Bosque</option>
+            <option value="Cofico">Cofico</option>
+            <option value="Colinas de Bella Vista">Colinas de Bella Vista</option>
+            <option value="Colinas de Vélez Sársfield">Colinas de Vélez Sársfield</option>
+            <option value="Colinas del Cerro Ampliación">Colinas del Cerro Ampliación</option>
+            <option value="Colinas del Cerro">Colinas del Cerro</option>
+            <option value="Colonia Lola">Colonia Lola</option>
+            <option value="Colón">Colón</option>
+            <option value="Comandante Espora">Comandante Espora</option>
+            <option value="Comarca de Allende">Comarca de Allende</option>
+            <option value="Comercial">Comercial</option>
+            <option value="Condor Alto">Condor Alto</option>
+            <option value="Congreso">Congreso</option>
+            <option value="Consorcio Esperanza">Consorcio Esperanza</option>
+            <option value="Cooperativa La Unidad">Cooperativa La Unidad</option>
+            <option value="Corral de Palos">Corral de Palos</option>
+            <option value="Country Club">Country Club</option>
+            <option value="Covico">Covico</option>
+            <option value="Crisol Norte">Crisol Norte</option>
+            <option value="Crisol Sud">Crisol Sud</option>
+            <option value="Cuatro Hojas">Cuatro Hojas</option>
+            <option value="Cuesta Colorada">Cuesta Colorada</option>
+            <option value="Cumbres de Villa Allende">Cumbres de Villa Allende</option>
+            <option value="Cumbres del Golf">Cumbres del Golf</option>
+            <option value="Cupani">Cupani</option>
+            <option value="Cáceres">Cáceres</option>
+            <option value="Córdoba 4">Córdoba 4</option>
+            <option value="Córdoba 5">Córdoba 5</option>
+            <option value="Docta">Docta</option>
+            <option value="Ducasse">Ducasse</option>
+            <option value="Déan Funes">Déan Funes</option>
+            <option value="Ejército Argentino">Ejército Argentino</option>
+            <option value="El Bosque">El Bosque</option>
+            <option value="El Cabildo">El Cabildo</option>
+            <option value="El Pueblito">El Pueblito</option>
+            <option value="El Quebracho">El Quebracho</option>
+            <option value="El Refugio">El Refugio</option>
+            <option value="El Rodeo">El Rodeo</option>
+            <option value="El Talar de Mendiolaza">El Talar de Mendiolaza</option>
+            <option value="El Trebol">El Trebol</option>
+            <option value="Emaus">Emaus</option>
+            <option value="Empalme">Empalme</option>
+            <option value="Escobar">Escobar</option>
+            <option value="Estación Flores">Estación Flores</option>
+            <option value="Estación del Carmen">Estación del Carmen</option>
+            <option value="Estancia La Lucila">Estancia La Lucila</option>
+            <option value="Estancia Q2">Estancia Q2</option>
+            <option value="Ferrer">Ferrer</option>
+            <option value="Ferreyra">Ferreyra</option>
+            <option value="Ferroviario Mitre">Ferroviario Mitre</option>
+            <option value="Finca La Dorotea">Finca La Dorotea</option>
+            <option value="Fincas Del Sur II">Fincas Del Sur II</option>
+            <option value="Fincas del Sur I">Fincas del Sur I</option>
+            <option value="Fortin del Pozo">Fortin del Pozo</option>
+            <option value="Fortín del Pozo">Fortín del Pozo</option>
+            <option value="General Arenales">General Arenales</option>
+            <option value="General Artigas">General Artigas</option>
+            <option value="General Belgrano">General Belgrano</option>
+            <option value="General Bustos">General Bustos</option>
+            <option value="General Mosconi">General Mosconi</option>
+            <option value="General Paz">General Paz</option>
+            <option value="General Pueyrredón">General Pueyrredón</option>
+            <option value="General Savio">General Savio</option>
+            <option value="Golf">Golf</option>
+            <option value="Granadero Pringles">Granadero Pringles</option>
+            <option value="Granja de Funes">Granja de Funes</option>
+            <option value="Greenville 2">Greenville 2</option>
+            <option value="Guarnición Aérea Córdoba">Guarnición Aérea Córdoba</option>
+            <option value="Guarnición Militar Córdoba">Guarnición Militar Córdoba</option>
+            <option value="Guayaquil">Guayaquil</option>
+            <option value="Guiñazú Sud">Guiñazú Sud</option>
+            <option value="Guiñazú">Guiñazú</option>
+            <option value="Güemes">Güemes</option>
+            <option value="Hipólito Yrigoyen">Hipólito Yrigoyen</option>
+            <option value="Hogar Propio">Hogar Propio</option>
+            <option value="IPV Ituzaingó Anexo">IPV Ituzaingó Anexo</option>
+            <option value="Inaudi">Inaudi</option>
+            <option value="Independencia">Independencia</option>
+            <option value="Industrial Este">Industrial Este</option>
+            <option value="Industrial Oeste">Industrial Oeste</option>
+            <option value="Iponá">Iponá</option>
+            <option value="Irupé">Irupé</option>
+            <option value="Ituzaingó Anexo">Ituzaingó Anexo</option>
+            <option value="Ituzaingó">Ituzaingó</option>
+            <option value="Jardines del Jockey">Jardines del Jockey</option>
+            <option value="Jardín Claret">Jardín Claret</option>
+            <option value="Jardín Espinosa">Jardín Espinosa</option>
+            <option value="Jardín Hipódromo">Jardín Hipódromo</option>
+            <option value="Jardín de los Boulevares">Jardín de los Boulevares</option>
+            <option value="Jardín del Pilar">Jardín del Pilar</option>
+            <option value="Jardín del Sud">Jardín del Sud</option>
+            <option value="Jardín">Jardín</option>
+            <option value="Jerónimo Luis de Cabrera">Jerónimo Luis de Cabrera</option>
+            <option value="Jockey Club">Jockey Club</option>
+            <option value="José Hernández">José Hernández</option>
+            <option value="José Ignacio Díaz Sección 2">José Ignacio Díaz Sección 2</option>
+            <option value="José Ignacio Díaz Sección 3">José Ignacio Díaz Sección 3</option>
+            <option value="José Ignacio Díaz Sección 4">José Ignacio Díaz Sección 4</option>
+            <option value="José Ignacio Díaz Sección 5">José Ignacio Díaz Sección 5</option>
+            <option value="José Ignacio Díaz">José Ignacio Díaz</option>
+            <option value="José Ignacio Rucci">José Ignacio Rucci</option>
+            <option value="Juan B. Justo">Juan B. Justo</option>
+            <option value="Juan XXIII">Juan XXIII</option>
+            <option value="Juniors">Juniors</option>
+            <option value="Kairos">Kairos</option>
+            <option value="Kennedy">Kennedy</option>
+            <option value="La Calandria">La Calandria</option>
+            <option value="La Calera">La Calera</option>
+            <option value="La Carolina">La Carolina</option>
+            <option value="La Cascada">La Cascada</option>
+            <option value="La Catalina">La Catalina</option>
+            <option value="La Cuesta">La Cuesta</option>
+            <option value="La Estanzuela">La Estanzuela</option>
+            <option value="La Floresta">La Floresta</option>
+            <option value="La France">La France</option>
+            <option value="La Fraternidad">La Fraternidad</option>
+            <option value="La Herradura">La Herradura</option>
+            <option value="La Hortensia">La Hortensia</option>
+            <option value="La Morada">La Morada</option>
+            <option value="La Paloma">La Paloma</option>
+            <option value="La Paya I">La Paya I</option>
+            <option value="La Paya II">La Paya II</option>
+            <option value="La Reserva">La Reserva</option>
+            <option value="La Rufina">La Rufina</option>
+            <option value="La Rufina">La Rufina</option>
+            <option value="La Salle">La Salle</option>
+            <option value="La Santina">La Santina</option>
+            <option value="La Toma">La Toma</option>
+            <option value="Lamadrid">Lamadrid</option>
+            <option value="Las Cañitas">Las Cañitas</option>
+            <option value="Las Corzuelas">Las Corzuelas</option>
+            <option value="Las Dalias">Las Dalias</option>
+            <option value="Las Delicias">Las Delicias</option>
+            <option value="Las Flores">Las Flores</option>
+            <option value="Las Lilas">Las Lilas</option>
+            <option value="Las Magnolias">Las Magnolias</option>
+            <option value="Las Margaritas">Las Margaritas</option>
+            <option value="Las Palmas Anexo">Las Palmas Anexo</option>
+            <option value="Las Palmas">Las Palmas</option>
+            <option value="Las Playas">Las Playas</option>
+            <option value="Las Rosas">Las Rosas</option>
+            <option value="Las Violetas">Las Violetas</option>
+            <option value="Lasalle">Lasalle</option>
+            <option value="Liceo General Paz">Liceo General Paz</option>
+            <option value="Lomas Este">Lomas Este</option>
+            <option value="Lomas de San Martín">Lomas de San Martín</option>
+            <option value="Lomas de la Carolina">Lomas de la Carolina</option>
+            <option value="Lomas del Chateau">Lomas del Chateau</option>
+            <option value="Lomas del Suquía">Lomas del Suquía</option>
+            <option value="Los Boulevares">Los Boulevares</option>
+            <option value="Los Ceibos">Los Ceibos</option>
+            <option value="Los Eucaliptus">Los Eucaliptus</option>
+            <option value="Los Filtros">Los Filtros</option>
+            <option value="Los Gigantes">Los Gigantes</option>
+            <option value="Los Granados">Los Granados</option>
+            <option value="Los Jacarandáes">Los Jacarandáes</option>
+            <option value="Los Josefinos">Los Josefinos</option>
+            <option value="Los Mimbres">Los Mimbres</option>
+            <option value="Los Naranjos">Los Naranjos</option>
+            <option value="Los Olmos Sud">Los Olmos Sud</option>
+            <option value="Los Olmos">Los Olmos</option>
+            <option value="Los Paraísos">Los Paraísos</option>
+            <option value="Los Pinos">Los Pinos</option>
+            <option value="Los Plátanos">Los Plátanos</option>
+            <option value="Los Prados">Los Prados</option>
+            <option value="Los Principios">Los Principios</option>
+            <option value="Los Robles">Los Robles</option>
+            <option value="Los Sauces">Los Sauces</option>
+            <option value="Los Álamos">Los Álamos</option>
+            <option value="Maipú Sección 1">Maipú Sección 1</option>
+            <option value="Maipú Sección 2">Maipú Sección 2</option>
+            <option value="Maipú">Maipú</option>
+            <option value="Malagueño">Malagueño</option>
+            <option value="Maldonado">Maldonado</option>
+            <option value="Manantiales">Manantiales</option>
+            <option value="Marcelo T. de Alvear">Marcelo T. de Alvear</option>
+            <option value="Marcos Sastre">Marcos Sastre</option>
+            <option value="Marechal">Marechal</option>
+            <option value="Mariano Balcarce">Mariano Balcarce</option>
+            <option value="Mariano Fragueiro">Mariano Fragueiro</option>
+            <option value="Marqués de Sobremonte">Marqués de Sobremonte</option>
+            <option value="Matienzo">Matienzo</option>
+            <option value="Mauller">Mauller</option>
+            <option value="Maurizi">Maurizi</option>
+            <option value="Mendiolaza Golf">Mendiolaza Golf</option>
+            <option value="Mendiolaza">Mendiolaza</option>
+            <option value="Mercantil">Mercantil</option>
+            <option value="Militar General Deheza">Militar General Deheza</option>
+            <option value="Mirador">Mirador</option>
+            <option value="Miradores de Manantiales">Miradores de Manantiales</option>
+            <option value="Miralta">Miralta</option>
+            <option value="Mirizzi">Mirizzi</option>
+            <option value="Nicolás Avellaneda">Nicolás Avellaneda</option>
+            <option value="Nuestro Hogar I">Nuestro Hogar I</option>
+            <option value="Nuestro Hogar III">Nuestro Hogar III</option>
+            <option value="Nueva Córdoba Anexa">Nueva Córdoba Anexa</option>
+            <option value="Nueva Córdoba">Nueva Córdoba</option>
+            <option value="Nueva Italia">Nueva Italia</option>
+            <option value="Nuevo Urca">Nuevo Urca</option>
+            <option value="OSN">OSN</option>
+            <option value="Obrero">Obrero</option>
+            <option value="Observatorio">Observatorio</option>
+            <option value="Ombú">Ombú</option>
+            <option value="Oña">Oña</option>
+            <option value="Padre Claret Anexo">Padre Claret Anexo</option>
+            <option value="Padre Claret">Padre Claret</option>
+            <option value="Palermo Bajo">Palermo Bajo</option>
+            <option value="Palmar">Palmar</option>
+            <option value="Palmas de Claret">Palmas de Claret</option>
+            <option value="Panamericano">Panamericano</option>
+            <option value="Parque Alameda">Parque Alameda</option>
+            <option value="Parque Atlántica">Parque Atlántica</option>
+            <option value="Parque Capital Sud">Parque Capital Sud</option>
+            <option value="Parque Capital">Parque Capital</option>
+            <option value="Parque Chacabuco">Parque Chacabuco</option>
+            <option value="Parque Don Bosco">Parque Don Bosco</option>
+            <option value="Parque Futura">Parque Futura</option>
+            <option value="Parque Gorema">Parque Gorema</option>
+            <option value="Parque Horizonte">Parque Horizonte</option>
+            <option value="Parque Jorge Newbery">Parque Jorge Newbery</option>
+            <option value="Parque Latino">Parque Latino</option>
+            <option value="Parque Liceo Sección 1">Parque Liceo Sección 1</option>
+            <option value="Parque Liceo Sección 2">Parque Liceo Sección 2</option>
+            <option value="Parque Liceo Sección 3">Parque Liceo Sección 3</option>
+            <option value="Parque Los Molinos">Parque Los Molinos</option>
+            <option value="Parque Modelo">Parque Modelo</option>
+            <option value="Parque Montecristo">Parque Montecristo</option>
+            <option value="Parque Republica">Parque Republica</option>
+            <option value="Parque San Carlos">Parque San Carlos</option>
+            <option value="Parque Sarmiento">Parque Sarmiento</option>
+            <option value="Parque Tablada">Parque Tablada</option>
+            <option value="Parque Vélez Sársfield">Parque Vélez Sársfield</option>
+            <option value="Parque de la Vega Tres">Parque de la Vega Tres</option>
+            <option value="Paso de Piedra">Paso de Piedra</option>
+            <option value="Paso de los Andes">Paso de los Andes</option>
+            <option value="Patria">Patria</option>
+            <option value="Patricios Este">Patricios Este</option>
+            <option value="Patricios Norte">Patricios Norte</option>
+            <option value="Patricios Oeste">Patricios Oeste</option>
+            <option value="Patricios">Patricios</option>
+            <option value="Poeta Lugones">Poeta Lugones</option>
+            <option value="Policial">Policial</option>
+            <option value="Portal de Jacarandáes">Portal de Jacarandáes</option>
+            <option value="Portal del Jacarandá">Portal del Jacarandá</option>
+            <option value="Posta de Vargas">Posta de Vargas</option>
+            <option value="Pque. Liceo I">Pque. Liceo I</option>
+            <option value="Primera Junta">Primera Junta</option>
+            <option value="Providencia">Providencia</option>
+            <option value="Puente Blanco">Puente Blanco</option>
+            <option value="Quebrada de las Rosas">Quebrada de las Rosas</option>
+            <option value="Quinta Santa Ana">Quinta Santa Ana</option>
+            <option value="Quintas de Argüello">Quintas de Argüello</option>
+            <option value="Quintas de San Jorge">Quintas de San Jorge</option>
+            <option value="Quisquisacate">Quisquisacate</option>
+            <option value="Ramón J. Cárcano">Ramón J. Cárcano</option>
+            <option value="Recreo del Norte">Recreo del Norte</option>
+            <option value="Remedios de Escalada">Remedios de Escalada</option>
+            <option value="Renacimiento">Renacimiento</option>
+            <option value="René Favaloro">René Favaloro</option>
+            <option value="Res. Sud">Res. Sud</option>
+            <option value="Res. Vélez Sársfield">Res. Vélez Sársfield</option>
+            <option value="Residencial América">Residencial América</option>
+            <option value="Residencial Aragón">Residencial Aragón</option>
+            <option value="Residencial Chateau">Residencial Chateau</option>
+            <option value="Residencial Olivos">Residencial Olivos</option>
+            <option value="Residencial San Carlos">Residencial San Carlos</option>
+            <option value="Residencial San Jorge">Residencial San Jorge</option>
+            <option value="Residencial San Roque">Residencial San Roque</option>
+            <option value="Residencial Santa Ana">Residencial Santa Ana</option>
+            <option value="Residencial Sud">Residencial Sud</option>
+            <option value="Residencial Vélez Sársfield">Residencial Vélez Sársfield</option>
+            <option value="Riberas de Manantiales">Riberas de Manantiales</option>
+            <option value="Rivadavia">Rivadavia</option>
+            <option value="Rivera Indarte">Rivera Indarte</option>
+            <option value="Rogelio Martinez">Rogelio Martinez</option>
+            <option value="Rosedal Anexo">Rosedal Anexo</option>
+            <option value="Rosedal">Rosedal</option>
+            <option value="SEP">SEP</option>
+            <option value="SMATA">SMATA</option>
+            <option value="Sacchi">Sacchi</option>
+            <option value="San Alfonso del Talar">San Alfonso del Talar</option>
+            <option value="San Antonio">San Antonio</option>
+            <option value="San Cayetano">San Cayetano</option>
+            <option value="San Daniel">San Daniel</option>
+            <option value="San Felipe">San Felipe</option>
+            <option value="San Fernando">San Fernando</option>
+            <option value="San Francisco">San Francisco</option>
+            <option value="San Ignacio">San Ignacio</option>
+            <option value="San Isidro">San Isidro</option>
+            <option value="San Javier">San Javier</option>
+            <option value="San José">San José</option>
+            <option value="San Lorenzo Norte">San Lorenzo Norte</option>
+            <option value="San Lorenzo">San Lorenzo</option>
+            <option value="San Luis de Francia">San Luis de Francia</option>
+            <option value="San Marcelo">San Marcelo</option>
+            <option value="San Martín Anexo">San Martín Anexo</option>
+            <option value="San Martín Norte">San Martín Norte</option>
+            <option value="San Martín">San Martín</option>
+            <option value="San Nicolás">San Nicolás</option>
+            <option value="San Pablo">San Pablo</option>
+            <option value="San Pedro Nolasco">San Pedro Nolasco</option>
+            <option value="San Rafael">San Rafael</option>
+            <option value="San Ramón">San Ramón</option>
+            <option value="San Salvador">San Salvador</option>
+            <option value="San Vicente">San Vicente</option>
+            <option value="Santa Cecilia">Santa Cecilia</option>
+            <option value="Santa Clara de Asís">Santa Clara de Asís</option>
+            <option value="Santa Isabel Sección 1">Santa Isabel Sección 1</option>
+            <option value="Santa Isabel Sección 2">Santa Isabel Sección 2</option>
+            <option value="Santa Isabel Sección 3">Santa Isabel Sección 3</option>
+            <option value="Santa Isabel">Santa Isabel</option>
+            <option value="Santa Rita">Santa Rita</option>
+            <option value="Santa Rosa">Santa Rosa</option>
+            <option value="Santina Norte">Santina Norte</option>
+            <option value="Sargento Cabral">Sargento Cabral</option>
+            <option value="Sarmiento">Sarmiento</option>
+            <option value="Siete Soles">Siete Soles</option>
+            <option value="Silvano Funes">Silvano Funes</option>
+            <option value="Solares de San Alfonso">Solares de San Alfonso</option>
+            <option value="Solares de Santa María">Solares de Santa María</option>
+            <option value="Soles Serranos">Soles Serranos</option>
+            <option value="Suárez">Suárez</option>
+            <option value="Tablada Park">Tablada Park</option>
+            <option value="Talleres Este">Talleres Este</option>
+            <option value="Talleres Oeste">Talleres Oeste</option>
+            <option value="Talleres Sud">Talleres Sud</option>
+            <option value="Tejas III">Tejas III</option>
+            <option value="Tejas del Sur I">Tejas del Sur I</option>
+            <option value="Tejas del Sur II">Tejas del Sur II</option>
+            <option value="Teniente Benjamín Matienzo">Teniente Benjamín Matienzo</option>
+            <option value="Teodoro Felds">Teodoro Felds</option>
+            <option value="Terranova">Terranova</option>
+            <option value="Terrazas de La Estanzuela">Terrazas de La Estanzuela</option>
+            <option value="Terrazas de Villa Allende">Terrazas de Villa Allende</option>
+            <option value="Tranviarios">Tranviarios</option>
+            <option value="UOCRA">UOCRA</option>
+            <option value="Urca">Urca</option>
+            <option value="Uritorco">Uritorco</option>
+            <option value="Urquiza">Urquiza</option>
+            <option value="Valle Cercano">Valle Cercano</option>
+            <option value="Valle Escondido">Valle Escondido</option>
+            <option value="Valle del Cerro">Valle del Cerro</option>
+            <option value="Valle del Golf">Valle del Golf</option>
+            <option value="Valle del Sol">Valle del Sol</option>
+            <option value="Vicor">Vicor</option>
+            <option value="Villa 4 de Agosto">Villa 4 de Agosto</option>
+            <option value="Villa 9 de Julio">Villa 9 de Julio</option>
+            <option value="Villa Adela">Villa Adela</option>
+            <option value="Villa Alberdi">Villa Alberdi</option>
+            <option value="Villa Alicia Risler">Villa Alicia Risler</option>
+            <option value="Villa Allende Parque">Villa Allende Parque</option>
+            <option value="Villa Allende">Villa Allende</option>
+            <option value="Villa Argentina">Villa Argentina</option>
+            <option value="Villa Argüello">Villa Argüello</option>
+            <option value="Villa Aspacia">Villa Aspacia</option>
+            <option value="Villa Azalais Oeste">Villa Azalais Oeste</option>
+            <option value="Villa Azalais">Villa Azalais</option>
+            <option value="Villa Belgrano">Villa Belgrano</option>
+            <option value="Villa Bustos">Villa Bustos</option>
+            <option value="Villa Cabrera">Villa Cabrera</option>
+            <option value="Villa Catalina">Villa Catalina</option>
+            <option value="Villa Claudina">Villa Claudina</option>
+            <option value="Villa Corina">Villa Corina</option>
+            <option value="Villa Cornu">Villa Cornu</option>
+            <option value="Villa Coronel Olmedo">Villa Coronel Olmedo</option>
+            <option value="Villa El Libertador">Villa El Libertador</option>
+            <option value="Villa Esquiú">Villa Esquiú</option>
+            <option value="Villa Eucarística">Villa Eucarística</option>
+            <option value="Villa General Urquiza">Villa General Urquiza</option>
+            <option value="Villa Gran Parque">Villa Gran Parque</option>
+            <option value="Villa Los Angeles">Villa Los Angeles</option>
+            <option value="Villa Mafekin">Villa Mafekin</option>
+            <option value="Villa Marta">Villa Marta</option>
+            <option value="Villa Martínez">Villa Martínez</option>
+            <option value="Villa Páez">Villa Páez</option>
+            <option value="Villa Retiro">Villa Retiro</option>
+            <option value="Villa Revol Anexo">Villa Revol Anexo</option>
+            <option value="Villa Revol">Villa Revol</option>
+            <option value="Villa Rivadavia">Villa Rivadavia</option>
+            <option value="Villa Rivera Indarte">Villa Rivera Indarte</option>
+            <option value="Villa Saldán">Villa Saldán</option>
+            <option value="Villa San Carlos">Villa San Carlos</option>
+            <option value="Villa Serrana">Villa Serrana</option>
+            <option value="Villa Siburu">Villa Siburu</option>
+            <option value="Villa Solferino">Villa Solferino</option>
+            <option value="Villa Unión">Villa Unión</option>
+            <option value="Villa Warcalde">Villa Warcalde</option>
+            <option value="Villa Ávalos">Villa Ávalos</option>
+            <option value="Vivero Norte">Vivero Norte</option>
+            <option value="Yapeyú">Yapeyú</option>
+            <option value="Yofre H">Yofre H</option>
+            <option value="Yofre I">Yofre I</option>
+            <option value="Yofre Norte">Yofre Norte</option>
+            <option value="Yofre Sud">Yofre Sud</option>
+            <option value="Zumaran">Zumaran</option>
+          </select>
+        </td>
+        <td>
+          <select name="tipobarrio">
+            <option value="Abierto">Abierto</option>
+            <option value="Con Seguridad">Con seguridad</option>
+            <option value="Cerrado">Cerrado</option>
+            <option value="Country">Country</option>
+          </select>
+        </td>
+       <td>
+          <select name="dormitorios">
+            <option value="1">1 Dormitorio</option>
+            <option value="2">2 Dormitorios</option>
+            <option value="3">3 Dormitorios</option>
+            <option value="4">4 Dormitorios</option>
+            <option value="5">5 o más </option>
+          </select>
+        </td>
+        <td>
+          <select name="banios">
+            <option value="1">1 Baño</option>
+            <option value="2">2 Baños</option>
+            <option value="3">3 Baños</option>
+            <option value="4">4 Baños</option>
+            <option value="5">5 o más</option>
+          </select>
+        </td>
+        <td>
+          <select name="cocheras">
+            <option value="0">Sin cochera</option>
+            <option value="1">1 cochera</option>
+            <option value="2">2 cocheras</option>
+            <option value="3">3 cocheras</option>
+            <option value="4">4 cocheras</option>
+            <option value="5">5 o más</option>
+          </select>
+        </td>
+        <td>
+          <input type="text" name="mst2C" size="15" maxlength="5" required>
+        </td>
+        <td>
+          <input type="text" name="mst2T" size="15" maxlength="5" required>
+        </td>
+      </tr>
+    </table>
+    <article id="search">
+      <table style="font-family:verdana;font-size:80%;">
+        <tr>
+          <th>Valor</th>
+        </tr>
+        <tr>
+          <td>
+            {% if result : %}
+	          U$S
+              <input type="text" name="result" value={{ result }} size="10" maxlength="5" readonly>
+            {% else: %}
+              U$S
+              <input type="text" name="noresult" value="0.00" size="10" maxlength="5" readonly>
+            {% endif %}
+          </td>
+        </tr>
+      </table> *
+    </article>
+    <br><br>
+    <p>
+      <input type="submit" value="Calcular">
+    </p>
+  </form>
+
+  <p style="font-family:verdana;font-size:90%;">
+    * El valor arrojado resulta de una estimación basada en cálculos sobre más de 10.000 propiedades con un margen de error de (+-) U$S 12,000.00
+  </p>
+
+  <br><br><br><br>
+  <p style="font-family:verdana;font-size:80%;text-align:center;">
+    Proyecto desarrollado por Federico Castellano. <span class="copyleft">&copy;</span>2019.
+  </p>
+
+</body>
+</html>
